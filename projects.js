@@ -30,7 +30,7 @@
 const projects = [
   {
     title: "Address Book Application",
-    date: "—",
+    date: "2026 - Jan",
     description: "Built a LabVIEW customer address book application with search, edit and delete functionality, automatically syncing every change to a CSV-based customer database.",
     tags: ["LabVIEW", "CSV", "Application Development"],
     link: "",
@@ -57,7 +57,7 @@ const projects = [
   },
   {
     title: "Automill Board — Configurable Sequence Control System",
-    date: "—",
+    date: "2026 Feb",
     description: "Designed a configurable PLC-based sequence control system supporting up to 12 steps, with a custom HMI for configuration and real-time LED feedback on a live Allen-Bradley PLC.",
     tags: ["PLC", "Allen-Bradley", "FactoryTalk", "Automation"],
     link: "",
@@ -88,7 +88,7 @@ const projects = [
   },
   {
     title: "Statistical Analysis and System Performance Evaluation",
-    date: "—",
+    date: "2024 Nov",
     description: "Analysed roughly one million data samples in Python to evaluate randomness, distribution and six-sigma performance characteristics, and proposed improvements based on the findings.",
     tags: ["Python", "Statistics", "Data Analysis"],
     link: "",
@@ -118,7 +118,7 @@ const projects = [
   },
   {
     title: "Motor Control System for Helicopter Steering",
-    date: "—",
+    date: "2020 Jun",
     description: "Developed the hardware and embedded software for a helicopter directional control subsystem, implementing proportional motor control on a PIC18F45K20 microcontroller with a custom PCB.",
     tags: ["Embedded Systems", "PCB Design", "C++", "Control Systems"],
     link: "",
@@ -148,7 +148,7 @@ const projects = [
   },
   {
     title: "Sensor Integration and Pilot Monitoring System",
-    date: "—",
+    date: "2021 Jan",
     description: "Built a multi-sensor monitoring system integrating temperature, RPM and photodiode inputs into a single embedded platform, with real-time seven-segment and graphical displays.",
     tags: ["Embedded Systems", "Sensors", "C++", "PCB Assembly"],
     link: "",
@@ -182,7 +182,7 @@ const projects = [
   },
   {
     title: "Autonomous Vehicle Convoy System",
-    date: "2026",
+    date: "2024 Nov",
     description: "Designed and built an autonomous vehicle convoy system where a follower vehicle tracks and maintains a controlled distance from a lead vehicle, combining wireless positioning, sensor fusion, and autonomous control across predefined waypoints.",
     tags: ["Robotics", "Embedded Systems", "Python", "Control Systems"],
     link: "",
@@ -253,7 +253,7 @@ const projects = [
   },
   {
     title: "SQL Server reporting query",
-    date: "Aug 2026",
+    date: "2026 Mar",
     description: "Wrote a query against a companies/contacts table to pull structured location and contact data for reporting, replacing a manual export-and-edit workflow.",
     tags: ["SQL Server", "Reporting"],
     link: "",
@@ -278,7 +278,7 @@ const projects = [
   Set "href" to "" to leave a link out entirely.
 */
 const siteLinks = [
-  { label: "Email", href: "mailto:you@example.com" },
-  { label: "LinkedIn", href: "" },
+  { label: "Email", href: "mailto:kocur.an@gmail.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/andrij-kocur/" },
   { label: "GitHub", href: "" }
 ];
