@@ -29,6 +29,158 @@
 
 const projects = [
   {
+    title: "Address Book Application",
+    date: "—",
+    description: "Built a LabVIEW customer address book application with search, edit and delete functionality, automatically syncing every change to a CSV-based customer database.",
+    tags: ["LabVIEW", "CSV", "Application Development"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "LabVIEW for the user interface and application logic.",
+          "CSV files for customer data storage.",
+          "Customer search, edit and delete functionality."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Developed a functional customer address book application.",
+          "Enabled users to search, view, edit and delete customer records.",
+          "Automatically updated the CSV database immediately when customer information was modified.",
+          "Developed both the graphical interface and underlying application logic in LabVIEW."
+        ]
+      }
+    ]
+  },
+  {
+    title: "Automill Board — Configurable Sequence Control System",
+    date: "—",
+    description: "Designed a configurable PLC-based sequence control system supporting up to 12 steps, with a custom HMI for configuration and real-time LED feedback on a live Allen-Bradley PLC.",
+    tags: ["PLC", "Allen-Bradley", "FactoryTalk", "Automation"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "Allen-Bradley 1758 PLC for live PLC implementation.",
+          "Rockwell Studio 5000 for PLC programming.",
+          "FactoryTalk View for HMI development.",
+          "Function blocks, timers and event-triggered sequence logic.",
+          "Physical LED outputs for sequence indication."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Developed a configurable control system supporting up to 12 sequence steps.",
+          "Deployed and tested the PLC program on a live Allen-Bradley PLC.",
+          "Physically indicated the active sequence step using LED outputs.",
+          "Allowed users to configure timer durations for individual functions.",
+          "Developed an HMI allowing users to configure and execute available functions.",
+          "Provided real-time visual feedback of sequence progression."
+        ]
+      }
+    ]
+  },
+  {
+    title: "Statistical Analysis and System Performance Evaluation",
+    date: "—",
+    description: "Analysed roughly one million data samples in Python to evaluate randomness, distribution and six-sigma performance characteristics, and proposed improvements based on the findings.",
+    tags: ["Python", "Statistics", "Data Analysis"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "Python for data processing and statistical analysis.",
+          "Analysis of approximately 1 million data samples.",
+          "NIST randomness tests.",
+          "Logarithmic data normalisation and visualisation.",
+          "Six Sigma and Gaussian distribution analysis."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Analysed the statistical behaviour of approximately one million data samples.",
+          "Evaluated data randomness and distribution characteristics.",
+          "Visualised six-sigma intervals and variations across the dataset.",
+          "Identified Gaussian distribution characteristics and system performance trends.",
+          "Proposed potential software and hardware improvements based on the analysis."
+        ]
+      }
+    ]
+  },
+  {
+    title: "Motor Control System for Helicopter Steering",
+    date: "—",
+    description: "Developed the hardware and embedded software for a helicopter directional control subsystem, implementing proportional motor control on a PIC18F45K20 microcontroller with a custom PCB.",
+    tags: ["Embedded Systems", "PCB Design", "C++", "Control Systems"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "PIC18F45K20 microcontroller.",
+          "C++ for embedded control software.",
+          "Proportional (P) control for motor control.",
+          "Altium Designer for PCB design.",
+          "Electronic hardware design and subsystem integration."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Developed hardware and software for a helicopter directional control subsystem.",
+          "Implemented proportional motor control using embedded software.",
+          "Designed the associated electronic PCB hardware.",
+          "Integrated the subsystem with the wider mechanical engineering system.",
+          "Collaborated within a multidisciplinary engineering team."
+        ]
+      }
+    ]
+  },
+  {
+    title: "Sensor Integration and Pilot Monitoring System",
+    date: "—",
+    description: "Built a multi-sensor monitoring system integrating temperature, RPM and photodiode inputs into a single embedded platform, with real-time seven-segment and graphical displays.",
+    tags: ["Embedded Systems", "Sensors", "C++", "PCB Assembly"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "PIC18F45K20 microcontroller.",
+          "C++ for embedded software development.",
+          "Thermocouple for temperature measurement.",
+          "Motor RPM sensing.",
+          "Photodiode-based sensing.",
+          "Seven-segment displays for real-time status indication.",
+          "Graphical display for system monitoring and verification.",
+          "PCB assembly, soldering and electronic component integration."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Developed a system to acquire and process multiple environmental and mechanical sensor inputs.",
+          "Integrated temperature, RPM and photodiode measurements into a single monitoring system.",
+          "Displayed real-time information using multiple seven-segment displays.",
+          "Implemented a graphical display for monitoring and verifying sensor data.",
+          "Designed and assembled the electronic hardware required for the monitoring subsystem.",
+          "Developed a prototype suitable for integration into a pilot monitoring environment."
+        ]
+      }
+    ]
+  },
+  {
     title: "Autonomous Vehicle Convoy System",
     date: "2026",
     description: "Designed and built an autonomous vehicle convoy system where a follower vehicle tracks and maintains a controlled distance from a lead vehicle, combining wireless positioning, sensor fusion, and autonomous control across predefined waypoints.",
