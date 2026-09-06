@@ -100,6 +100,38 @@
         entry.appendChild(figure);
       }
 
+      if (p.details && p.details.length) {
+        const details = document.createElement('details');
+        details.className = 'entry-details';
+
+        const summary = document.createElement('summary');
+        summary.textContent = 'Full project details';
+        details.appendChild(summary);
+
+        const body = document.createElement('div');
+        body.className = 'entry-details-body';
+
+        p.details.forEach(function (section) {
+          if (section.heading) {
+            const h3 = document.createElement('h3');
+            h3.textContent = section.heading;
+            body.appendChild(h3);
+          }
+          if (section.points && section.points.length) {
+            const ul = document.createElement('ul');
+            section.points.forEach(function (point) {
+              const li = document.createElement('li');
+              li.textContent = point;
+              ul.appendChild(li);
+            });
+            body.appendChild(ul);
+          }
+        });
+
+        details.appendChild(body);
+        entry.appendChild(details);
+      }
+
       const footer = document.createElement('div');
       footer.className = 'entry-footer';
 
