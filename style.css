@@ -30,6 +30,41 @@ body {
   padding: 64px 24px 80px;
 }
 
+/* ---------- Hero banner ---------- */
+
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #05070a;
+  will-change: opacity, transform;
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(5, 7, 10, 0) 0%, var(--paper) 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .hero-img {
+    height: 34vh;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 /* ---------- Masthead ---------- */
 
 .masthead {
@@ -172,6 +207,17 @@ button:focus-visible {
   margin: 0 0 14px;
   color: #3A3934;
   max-width: 62ch;
+}
+
+.entry-figure {
+  margin: 0 0 16px;
+  border: 1px solid var(--line);
+}
+
+.entry-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .entry-footer {

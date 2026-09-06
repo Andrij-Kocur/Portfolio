@@ -89,6 +89,17 @@
         entry.appendChild(desc);
       }
 
+      if (p.image) {
+        const figure = document.createElement('figure');
+        figure.className = 'entry-figure';
+        const img = document.createElement('img');
+        img.src = p.image;
+        img.alt = p.title;
+        img.loading = 'lazy';
+        figure.appendChild(img);
+        entry.appendChild(figure);
+      }
+
       const footer = document.createElement('div');
       footer.className = 'entry-footer';
 
