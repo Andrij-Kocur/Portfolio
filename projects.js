@@ -30,7 +30,7 @@
 const projects = [
   {
     title: "Pip-Boy Information and Character Management System",
-    date: "—",
+    date: "2026 Dec",
     description: "Built a Pip-Boy-inspired character and game information management application in LabVIEW, with editable player stats, inventory, weapons and armour data all synced to CSV files.",
     tags: ["LabVIEW", "CSV", "Application Development"],
     link: "",
@@ -64,7 +64,7 @@ const projects = [
   },
   {
     title: "AFK Arena Game Information Website",
-    date: "—",
+    date: "2024 Dec",
     description: "Built a multi-page website centralising AFK Arena game information into one reference platform, with custom CSS layouts and interactive JavaScript-driven navigation and animations.",
     tags: ["HTML", "CSS", "JavaScript", "Web Development"],
     link: "",
@@ -99,7 +99,7 @@ const projects = [
   },
   {
     title: "Address Book Application",
-    date: "2026 - Jan",
+    date: "2026 Jan",
     description: "Built a LabVIEW customer address book application with search, edit and delete functionality, automatically syncing every change to a CSV-based customer database.",
     tags: ["LabVIEW", "CSV", "Application Development"],
     link: "",
@@ -313,7 +313,7 @@ const projects = [
   },
   {
     title: "Contact list cleanup pipeline",
-    date: "Sep 2026",
+    date: "2026 Sept",
     description: "Built a repeatable process for turning messy multi-location contact exports into clean, Excel-ready files — standardising phone formats and flagging missing data across dozens of company records.",
     tags: ["Excel", "Data cleanup", "SQL Server"],
     link: "",
@@ -325,15 +325,6 @@ const projects = [
     date: "2026 Mar",
     description: "Wrote a query against a companies/contacts table to pull structured location and contact data for reporting, replacing a manual export-and-edit workflow.",
     tags: ["SQL Server", "Reporting"],
-    link: "",
-    image: "",
-    details: []
-  },
-  {
-    title: "Example: your next project",
-    date: "—",
-    description: "Delete this entry, or copy it as a starting point for the next one you add. Add an image by putting a file in this folder and setting its filename below.",
-    tags: ["Example"],
     link: "",
     image: "",
     details: []
@@ -349,5 +340,5 @@ const projects = [
 const siteLinks = [
   { label: "Email", href: "mailto:kocur.an@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/andrij-kocur/" },
-  { label: "GitHub", href: "" }
+  { label: "GitHub", href: "https://github.com/Andrij-Kocur/Portfolio" }
 ];
