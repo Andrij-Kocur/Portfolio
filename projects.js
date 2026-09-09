@@ -29,6 +29,75 @@
 
 const projects = [
   {
+    title: "Pip-Boy Information and Character Management System",
+    date: "—",
+    description: "Built a Pip-Boy-inspired character and game information management application in LabVIEW, with editable player stats, inventory, weapons and armour data all synced to CSV files.",
+    tags: ["LabVIEW", "CSV", "Application Development"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "LabVIEW for application development, user interface design and program logic.",
+          "SubVIs for modular development, with separate functionality for individual Pip-Boy sections.",
+          "Event Structures, Case Structures and While Loops for user interaction and application control.",
+          "Custom images edited and adapted specifically for the application interface.",
+          "Multiple CSV files for structured data storage, including inventory, weapons, armour, weather and radio stations."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Developed a functional Pip-Boy-inspired information and character management application.",
+          "Designed and implemented the complete graphical interface and navigation system.",
+          "Created separate interfaces for player statistics, general statistics and S.P.E.C.I.A.L. attributes.",
+          "Implemented detailed inventory, weapon and armour information.",
+          "Displayed weapon characteristics such as physical, radiation and energy damage.",
+          "Included functionality for quests, companions, radio stations, maps, weather and enemy information.",
+          "Enabled selected player information to be edited and automatically recorded in the relevant CSV files.",
+          "Designed the application primarily to provide detailed character and game information through an interactive interface.",
+          "Improved practical understanding of LabVIEW programming, modular application design and user-interface development while maintaining a fully functional application."
+        ]
+      }
+    ]
+  },
+  {
+    title: "AFK Arena Game Information Website",
+    date: "—",
+    description: "Built a multi-page website centralising AFK Arena game information into one reference platform, with custom CSS layouts and interactive JavaScript-driven navigation and animations.",
+    tags: ["HTML", "CSS", "JavaScript", "Web Development"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "HTML for website structure and content.",
+          "CSS for page design, layout and element positioning.",
+          "Vanilla JavaScript for interactive behaviour and animations.",
+          "Custom multi-page website architecture.",
+          "Mouse, hover, scroll and navigation-based interactions."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Developed a multi-page, desktop-focused information website for AFK Arena.",
+          "Centralised game information into a single, organised reference platform.",
+          "Created dedicated sections for heroes, factions, events and game updates.",
+          "Developed guides for the Labyrinth, Maze, Faction Towers and Campaign progression.",
+          "Included campaign team recommendations and detailed faction hero information.",
+          "Designed all page layouts, graphical positioning and visual elements using CSS.",
+          "Implemented interactive JavaScript behaviour including hover effects, navigation events and scrolling interactions.",
+          "Created animated elements including fading bars, changing headings and animated backgrounds.",
+          "Developed interactive emoticons that changed behaviour depending on user actions.",
+          "Delivered a static offline website providing detailed AFK Arena information in one location."
+        ]
+      }
+    ]
+  },
+  {
     title: "Address Book Application",
     date: "2026 - Jan",
     description: "Built a LabVIEW customer address book application with search, edit and delete functionality, automatically syncing every change to a CSV-based customer database.",
