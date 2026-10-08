@@ -29,6 +29,85 @@
 
 const projects = [
   {
+    title: "AutoMill EtherNet/IP Communication & Data Protocol",
+    date: "—",
+    description: "Developed the byte-level data protocol linking a LabVIEW HMI to an Allen-Bradley PLC over EtherNet/IP, with a fixed 496-byte packet, CRC validation and SQL database integration.",
+    tags: ["LabVIEW", "PLC", "EtherNet/IP", "SQL", "Industrial Networking"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "LabVIEW for HMI communication and data handling.",
+          "EtherNet/IP (EIP) LabVIEW communication module for PLC communication.",
+          "Allen-Bradley PLC with a fixed 496-byte data packet.",
+          "SQL for database communication and data storage.",
+          "Custom byte-level data packing and unpacking.",
+          "CRC (Cyclic Redundancy Check) for data integrity verification.",
+          "Strings, integers, real values and control data within structured byte packets."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Developed the data-packing and unpacking logic for communication between the HMI and PLC.",
+          "Structured data within the PLC's 496-byte communication buffer, assigning defined byte ranges to individual data types.",
+          "Parsed incoming byte streams according to predefined field sizes to correctly reconstruct the original data.",
+          "Implemented CRC validation to verify data integrity between transmitted and received packets.",
+          "Tested both valid and intentionally invalid CRC conditions to verify error detection.",
+          "Developed SQL queries including SELECT, INSERT, UPDATE and EXECUTE operations for database interaction.",
+          "Implemented two-way HMI ↔ PLC communication, including PLC acknowledgement of received data.",
+          "Transmitted information from the HMI to the PLC and returned PLC information to the HMI.",
+          "Integrated the communication process with the existing AutoMill database and SCADA environment.",
+          "Gained practical experience in industrial networking, byte-level data protocols, data integrity, PLC communication and SQL database integration."
+        ]
+      }
+    ]
+  },
+  {
+    title: "Odoo → WhatsApp & Telegram Messaging Integration",
+    date: "—",
+    description: "Built an integration that sends complete Odoo service-ticket details, including images and PDFs, to WhatsApp via webhook and API, with a Telegram proof-of-concept on the same architecture.",
+    tags: ["JavaScript", "Odoo", "API Integration", "Webhooks"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "JavaScript for data processing and conversion.",
+          "Odoo Webhooks/API for triggering message requests.",
+          "HTTP requests for communication between systems.",
+          "WhatsApp messaging integration through an external messaging service.",
+          "Telegram integration as a proof-of-concept.",
+          "API authentication using keys and tokens.",
+          "Structured data and message formatting.",
+          "Image and PDF data conversion and transmission.",
+          "Message ID generation and tracking."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Developed an integration to automatically send Odoo service-ticket information to WhatsApp.",
+          "Created a user-triggered process to package the complete ticket into a structured message.",
+          "Integrated an Odoo webhook to send ticket information to the messaging API.",
+          "Formatted and structured messages specifically for WhatsApp.",
+          "Included complete ticket information: client details, cell/contact information, site location, reported issue/problem, ticket priority and full ticket details.",
+          "Implemented HTTP requests to communicate with the external WhatsApp messaging service.",
+          "Generated and tracked message IDs to identify individual messages.",
+          "Developed logic to identify and convert images and PDF attachments into transmittable data.",
+          "Implemented transmission of images and PDF documents through WhatsApp.",
+          "Configured API authentication using keys and tokens.",
+          "Developed a Telegram messaging integration as a proof-of-concept using the same general architecture.",
+          "Created a system architecture connecting Odoo → Webhook/API → Data Processing → Messaging Service → WhatsApp/Telegram.",
+          "Demonstrated practical experience integrating business software with external communication platforms."
+        ]
+      }
+    ]
+  },
+  {
     title: "Pip-Boy Information and Character Management System",
     date: "2026 Dec",
     description: "Built a Pip-Boy-inspired character and game information management application in LabVIEW, with editable player stats, inventory, weapons and armour data all synced to CSV files.",
