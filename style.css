@@ -115,6 +115,32 @@ body {
   max-width: 46ch;
 }
 
+/* ---------- Sort control ---------- */
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.sort select {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.sort select:hover {
+  border-color: var(--pine-dim);
+}
+
 /* ---------- Tag filter controls ---------- */
 
 .controls {

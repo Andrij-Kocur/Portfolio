@@ -3,8 +3,47 @@
   const controlsEl = document.getElementById('controls');
   const metaLinksEl = document.getElementById('meta-links');
   const emptyStateEl = document.getElementById('empty-state');
+  const sortEl = document.getElementById('sort');
 
   let activeTag = null;
+  let sortOrder = 'newest';
+
+  // ---- Date parsing (understands "2026 Dec", "Dec 2026", "2026-12-05", "2026 Sept") ----
+  const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+  function dateValue(str) {
+    if (!str) return null;
+    str = String(str);
+    const iso = str.match(/(\d{4})-(\d{2})/);
+    if (iso) return parseInt(iso[1], 10) * 12 + (parseInt(iso[2], 10) - 1);
+    const yearMatch = str.match(/\b(19|20)\d{2}\b/);
+    if (!yearMatch) return null;
+    const lower = str.toLowerCase();
+    const idx = MONTHS.findIndex(function (m) { return lower.indexOf(m) !== -1; });
+    return parseInt(yearMatch[0], 10) * 12 + (idx === -1 ? 0 : idx);
+  }
+
+  function renderSort() {
+    sortEl.innerHTML = '';
+    const label = document.createElement('label');
+    label.htmlFor = 'sort-select';
+    label.textContent = 'Sort by date';
+    const select = document.createElement('select');
+    select.id = 'sort-select';
+    [['newest', 'Newest first'], ['oldest', 'Oldest first']].forEach(function (opt) {
+      const o = document.createElement('option');
+      o.value = opt[0];
+      o.textContent = opt[1];
+      select.appendChild(o);
+    });
+    select.value = sortOrder;
+    select.addEventListener('change', function () {
+      sortOrder = select.value;
+      renderEntries();
+    });
+    sortEl.appendChild(label);
+    sortEl.appendChild(select);
+  }
 
   // ---- Render site links ----
   (siteLinks || []).forEach(function (link) {
@@ -59,7 +98,17 @@
 
     emptyStateEl.hidden = filtered.length !== 0;
 
-    filtered.forEach(function (p) {
+    // Sort by date; entries without a usable date always go to the bottom.
+    const sorted = filtered.slice().sort(function (a, b) {
+      const da = dateValue(a.date);
+      const db = dateValue(b.date);
+      if (da === null && db === null) return 0;
+      if (da === null) return 1;
+      if (db === null) return -1;
+      return sortOrder === 'newest' ? db - da : da - db;
+    });
+
+    sorted.forEach(function (p) {
       const entry = document.createElement('article');
       entry.className = 'entry';
 
@@ -161,6 +210,7 @@
     });
   }
 
+  renderSort();
   renderControls();
   renderEntries();
 })();

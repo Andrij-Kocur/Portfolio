@@ -30,7 +30,7 @@
 const projects = [
   {
     title: "AutoMill EtherNet/IP Communication & Data Protocol",
-    date: "—",
+    date: "2026 Jul",
     description: "Developed the byte-level data protocol linking a LabVIEW HMI to an Allen-Bradley PLC over EtherNet/IP, with a fixed 496-byte packet, CRC validation and SQL database integration.",
     tags: ["LabVIEW", "PLC", "EtherNet/IP", "SQL", "Industrial Networking"],
     link: "",
@@ -67,7 +67,7 @@ const projects = [
   },
   {
     title: "Odoo → WhatsApp & Telegram Messaging Integration",
-    date: "—",
+    date: "2026 May",
     description: "Built an integration that sends complete Odoo service-ticket details, including images and PDFs, to WhatsApp via webhook and API, with a Telegram proof-of-concept on the same architecture.",
     tags: ["JavaScript", "Odoo", "API Integration", "Webhooks"],
     link: "",
