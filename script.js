@@ -58,42 +58,87 @@
     metaLinksEl.appendChild(a);
   });
 
-  // ---- Collect unique tags ----
-  const allTags = Array.from(
-    new Set(projects.flatMap(function (p) { return p.tags || []; }))
-  );
+  // ---- Collect unique tags, per category ----
+  function uniqueSorted(key) {
+    const set = new Set();
+    projects.forEach(function (p) {
+      (p[key] || []).forEach(function (t) { set.add(t); });
+    });
+    return Array.from(set).sort(function (x, y) {
+      return x.localeCompare(y, undefined, { sensitivity: 'base' });
+    });
+  }
+
+  const softwareTags = uniqueSorted('software');
+  const hardwareTags = uniqueSorted('hardware');
+
+  function selectTag(tag) {
+    activeTag = (activeTag === tag) ? null : tag;
+    renderControls();
+    renderEntries();
+  }
+
+  function buildTagGroup(title, tags, kind) {
+    if (!tags.length) return null;
+
+    const group = document.createElement('section');
+    group.className = 'tag-group';
+
+    const heading = document.createElement('h2');
+    heading.className = 'tag-heading';
+    heading.textContent = title;
+    group.appendChild(heading);
+
+    const pills = document.createElement('div');
+    pills.className = 'tag-pills';
+    tags.forEach(function (tag) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'tag-pill ' + kind + (activeTag === tag ? ' active' : '');
+      btn.setAttribute('aria-pressed', activeTag === tag ? 'true' : 'false');
+      btn.textContent = tag;
+      btn.addEventListener('click', function () { selectTag(tag); });
+      pills.appendChild(btn);
+    });
+    group.appendChild(pills);
+    return group;
+  }
 
   function renderControls() {
     controlsEl.innerHTML = '';
-    if (allTags.length <= 1) return;
 
-    const allBtn = document.createElement('button');
-    allBtn.className = 'tag-pill' + (activeTag === null ? ' active' : '');
-    allBtn.textContent = 'All';
-    allBtn.addEventListener('click', function () {
-      activeTag = null;
-      renderControls();
-      renderEntries();
-    });
-    controlsEl.appendChild(allBtn);
-
-    allTags.forEach(function (tag) {
-      const btn = document.createElement('button');
-      btn.className = 'tag-pill' + (activeTag === tag ? ' active' : '');
-      btn.textContent = tag;
-      btn.addEventListener('click', function () {
-        activeTag = (activeTag === tag) ? null : tag;
+    if (activeTag) {
+      const status = document.createElement('div');
+      status.className = 'filter-status';
+      status.appendChild(document.createTextNode('Showing projects that use '));
+      const strong = document.createElement('strong');
+      strong.textContent = activeTag;
+      status.appendChild(strong);
+      const clear = document.createElement('button');
+      clear.type = 'button';
+      clear.className = 'clear-filter';
+      clear.textContent = 'Show all';
+      clear.addEventListener('click', function () {
+        activeTag = null;
         renderControls();
         renderEntries();
       });
-      controlsEl.appendChild(btn);
-    });
+      status.appendChild(clear);
+      controlsEl.appendChild(status);
+    }
+
+    [
+      buildTagGroup('Software', softwareTags, 'sw'),
+      buildTagGroup('Hardware', hardwareTags, 'hw')
+    ].forEach(function (g) { if (g) controlsEl.appendChild(g); });
   }
 
   function renderEntries() {
     logEl.innerHTML = '';
     const filtered = activeTag
-      ? projects.filter(function (p) { return (p.tags || []).includes(activeTag); })
+      ? projects.filter(function (p) {
+          return (p.software || []).includes(activeTag) || (p.hardware || []).includes(activeTag);
+        })
       : projects;
 
     emptyStateEl.hidden = filtered.length !== 0;
@@ -184,16 +229,27 @@
       const footer = document.createElement('div');
       footer.className = 'entry-footer';
 
-      if (p.tags && p.tags.length) {
-        const tagList = document.createElement('ul');
-        tagList.className = 'entry-tags';
-        p.tags.forEach(function (tag) {
+      const tagGroups = document.createElement('div');
+      tagGroups.className = 'entry-tag-groups';
+      [['Software', p.software, 'sw'], ['Hardware', p.hardware, 'hw']].forEach(function (g) {
+        if (!g[1] || !g[1].length) return;
+        const row = document.createElement('div');
+        row.className = 'entry-tag-row';
+        const label = document.createElement('span');
+        label.className = 'entry-tag-label';
+        label.textContent = g[0];
+        row.appendChild(label);
+        const list = document.createElement('ul');
+        list.className = 'entry-tags ' + g[2];
+        g[1].forEach(function (tag) {
           const li = document.createElement('li');
           li.textContent = tag;
-          tagList.appendChild(li);
+          list.appendChild(li);
         });
-        footer.appendChild(tagList);
-      }
+        row.appendChild(list);
+        tagGroups.appendChild(row);
+      });
+      if (tagGroups.children.length) footer.appendChild(tagGroups);
 
       if (p.link) {
         const linkEl = document.createElement('a');

@@ -6,7 +6,7 @@
   --line: #D8D5C4;
   --pine: #2F5D50;
   --pine-dim: #6E8C82;
-  --amber: #A8712F;
+  --amber: #8A5A20;
   --focus: #2F5D50;
 }
 
@@ -145,12 +145,48 @@ body {
 
 .controls {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 24px;
   margin-bottom: 40px;
 }
 
 .controls:empty { display: none; }
+
+.tag-heading {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0 0 10px;
+}
+
+.tag-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-status {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.filter-status strong { color: var(--ink); font-weight: 600; }
+
+.clear-filter {
+  font: inherit;
+  color: var(--pine);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--pine-dim);
+  padding: 0;
+  cursor: pointer;
+}
+
+.clear-filter:hover { color: var(--ink); border-bottom-color: var(--ink); }
 
 .tag-pill {
   font-family: 'Inter', sans-serif;
@@ -172,6 +208,17 @@ body {
 .tag-pill.active {
   background: var(--pine);
   border-color: var(--pine);
+  color: var(--paper-raised);
+}
+
+.tag-pill.hw:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.tag-pill.hw.active {
+  background: var(--amber);
+  border-color: var(--amber);
   color: var(--paper-raised);
 }
 
@@ -309,9 +356,28 @@ button:focus-visible {
 
 .entry-footer {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.entry-tag-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.entry-tag-row {
+  display: flex;
+  align-items: baseline;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 4px 12px;
+}
+
+.entry-tag-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  min-width: 4.6rem;
 }
 
 .entry-tags {
@@ -324,9 +390,11 @@ button:focus-visible {
 }
 
 .entry-tags li {
-  font-size: 0.82rem;
-  color: var(--amber);
+  font-size: 0.84rem;
 }
+
+.entry-tags.sw li { color: var(--pine); }
+.entry-tags.hw li { color: var(--amber); }
 
 .entry-link {
   font-size: 0.9rem;
