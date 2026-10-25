@@ -3,14 +3,19 @@
   ------------------------
   1. Copy one of the { ... } blocks below (including the curly braces).
   2. Paste it right after the opening "const projects = [" line, so it appears at the top of the list.
-  3. Fill in your own title, date, description, tags, and link.
+  3. Fill in your own title, date, description, software, hardware, and link.
   4. Save the file. That's it — no other file needs to change.
 
   Fields:
     title       - project name, shown as the heading
     date        - shown as-is, e.g. "Sep 2026" or "2026-09-06"
     description - one or two sentences about what it is / what you did (shown in the list)
-    tags        - a list of short labels used for filtering, e.g. ["SQL", "Automation"]
+    software    - software, languages and tools used, e.g. ["Python", "Studio 5000"].
+                  Appears under the "Software" heading in the filter. Use [] if none.
+    hardware    - the specific hardware used, e.g. ["Allen-Bradley PLC", "BNO085 IMU"].
+                  Appears under the "Hardware" heading in the filter. Use [] if none.
+                  Tip: spell each tag exactly the same way every time. The filter groups
+                  projects by matching the text.
     link        - (optional) URL to the live project, repo, or write-up. Leave as "" if there's nothing to link to.
     image       - (optional) filename of an image to show, e.g. "project1.jpg". Put the image
                   file in this same folder, next to index.html, then reference its filename here.
@@ -29,10 +34,47 @@
 
 const projects = [
   {
+    title: "Bread Slicer Machine — Electrical Design, Mechanical Assembly & Technical Documentation",
+    date: "2025 Nov",
+    description: "Produced the complete electrical design and technical documentation for a bread slicer machine, including KiCad schematics, wiring diagrams, BOM, mechanical assembly drawings and motor drive configuration for left- and right-hand versions.",
+    software: ["KiCad", "Excel"],
+    hardware: ["Delta PLC", "Mitsubishi PLC", "Motor Drives", "Limit Switches", "Magnetic Switches", "Control Panel"],
+    link: "",
+    image: "",
+    details: [
+      {
+        heading: "Technologies Used",
+        points: [
+          "KiCad for electrical schematics, wiring diagrams and component layout documentation.",
+          "Microsoft Excel for the Bill of Materials (BOM).",
+          "PLC and motor drive integration, including motor wiring and drive parameter configuration.",
+          "Electrical harness design, soldering and cable assembly.",
+          "Mechanical assembly drawings with dimensions, fasteners and component locations.",
+          "Documentation of sensors, limit switches, magnetic switches, motors, fans, junction boxes and control panels."
+        ]
+      },
+      {
+        heading: "What Was Achieved",
+        points: [
+          "Developed comprehensive engineering documentation for the bread slicer machine, covering both left-hand and right-hand configurations.",
+          "Structured the documentation into a BOM, electrical panel layout, electrical schematics, wiring diagrams and mechanical assembly instructions.",
+          "Documented the physical installation and positioning of electrical components, sensors, motors, fans and junction boxes, including dimensions and fastener specifications.",
+          "Produced multi-view assembly drawings illustrating the machine construction from different angles.",
+          "Documented electrical harness construction and interconnections between the slicer and downstream packing equipment.",
+          "Detailed motor wiring, soldering procedures and connections between the PLC-controlled system and motor drives.",
+          "Documented motor drive parameter configuration to ensure correct operation.",
+          "Created a comprehensive machine build and maintenance reference to guide engineers and technicians through assembly, wiring, commissioning, troubleshooting and future design improvements.",
+          "Established a repeatable engineering blueprint supporting consistent machine construction and future modifications."
+        ]
+      }
+    ]
+  },
+  {
     title: "AutoMill EtherNet/IP Communication & Data Protocol",
     date: "2026 Jul",
     description: "Developed the byte-level data protocol linking a LabVIEW HMI to an Allen-Bradley PLC over EtherNet/IP, with a fixed 496-byte packet, CRC validation and SQL database integration.",
-    tags: ["LabVIEW", "PLC", "EtherNet/IP", "SQL", "Industrial Networking"],
+    software: ["LabVIEW", "EtherNet/IP", "SQL", "CRC Validation"],
+    hardware: ["Allen-Bradley PLC"],
     link: "",
     image: "",
     details: [
@@ -69,7 +111,8 @@ const projects = [
     title: "Odoo → WhatsApp & Telegram Messaging Integration",
     date: "2026 May",
     description: "Built an integration that sends complete Odoo service-ticket details, including images and PDFs, to WhatsApp via webhook and API, with a Telegram proof-of-concept on the same architecture.",
-    tags: ["JavaScript", "Odoo", "API Integration", "Webhooks"],
+    software: ["Odoo", "JavaScript", "Webhooks", "WhatsApp", "Telegram"],
+    hardware: [],
     link: "",
     image: "",
     details: [
@@ -111,7 +154,8 @@ const projects = [
     title: "Pip-Boy Information and Character Management System",
     date: "2026 Dec",
     description: "Built a Pip-Boy-inspired character and game information management application in LabVIEW, with editable player stats, inventory, weapons and armour data all synced to CSV files.",
-    tags: ["LabVIEW", "CSV", "Application Development"],
+    software: ["LabVIEW", "CSV"],
+    hardware: [],
     link: "",
     image: "",
     details: [
@@ -145,7 +189,8 @@ const projects = [
     title: "AFK Arena Game Information Website",
     date: "2024 Dec",
     description: "Built a multi-page website centralising AFK Arena game information into one reference platform, with custom CSS layouts and interactive JavaScript-driven navigation and animations.",
-    tags: ["HTML", "CSS", "JavaScript", "Web Development"],
+    software: ["HTML", "CSS", "JavaScript"],
+    hardware: [],
     link: "",
     image: "",
     details: [
@@ -180,7 +225,8 @@ const projects = [
     title: "Address Book Application",
     date: "2026 Jan",
     description: "Built a LabVIEW customer address book application with search, edit and delete functionality, automatically syncing every change to a CSV-based customer database.",
-    tags: ["LabVIEW", "CSV", "Application Development"],
+    software: ["LabVIEW", "CSV"],
+    hardware: [],
     link: "",
     image: "",
     details: [
@@ -207,7 +253,8 @@ const projects = [
     title: "Automill Board — Configurable Sequence Control System",
     date: "2026 Feb",
     description: "Designed a configurable PLC-based sequence control system supporting up to 12 steps, with a custom HMI for configuration and real-time LED feedback on a live Allen-Bradley PLC.",
-    tags: ["PLC", "Allen-Bradley", "FactoryTalk", "Automation"],
+    software: ["Studio 5000", "FactoryTalk View"],
+    hardware: ["Allen-Bradley PLC", "LED Outputs"],
     link: "",
     image: "",
     details: [
@@ -238,7 +285,8 @@ const projects = [
     title: "Statistical Analysis and System Performance Evaluation",
     date: "2024 Nov",
     description: "Analysed roughly one million data samples in Python to evaluate randomness, distribution and six-sigma performance characteristics, and proposed improvements based on the findings.",
-    tags: ["Python", "Statistics", "Data Analysis"],
+    software: ["Python", "NIST Randomness Tests", "Six Sigma"],
+    hardware: [],
     link: "",
     image: "",
     details: [
@@ -268,7 +316,8 @@ const projects = [
     title: "Motor Control System for Helicopter Steering",
     date: "2020 Jun",
     description: "Developed the hardware and embedded software for a helicopter directional control subsystem, implementing proportional motor control on a PIC18F45K20 microcontroller with a custom PCB.",
-    tags: ["Embedded Systems", "PCB Design", "C++", "Control Systems"],
+    software: ["C++", "Altium Designer", "P Control"],
+    hardware: ["PIC18F45K20", "Custom PCB"],
     link: "",
     image: "",
     details: [
@@ -298,7 +347,8 @@ const projects = [
     title: "Sensor Integration and Pilot Monitoring System",
     date: "2021 Jan",
     description: "Built a multi-sensor monitoring system integrating temperature, RPM and photodiode inputs into a single embedded platform, with real-time seven-segment and graphical displays.",
-    tags: ["Embedded Systems", "Sensors", "C++", "PCB Assembly"],
+    software: ["C++"],
+    hardware: ["PIC18F45K20", "Thermocouple", "Photodiode", "RPM Sensor", "Seven-Segment Display"],
     link: "",
     image: "",
     details: [
@@ -332,7 +382,8 @@ const projects = [
     title: "Autonomous Vehicle Convoy System",
     date: "2024 Nov",
     description: "Designed and built an autonomous vehicle convoy system where a follower vehicle tracks and maintains a controlled distance from a lead vehicle, combining wireless positioning, sensor fusion, and autonomous control across predefined waypoints.",
-    tags: ["Robotics", "Embedded Systems", "Python", "Control Systems"],
+    software: ["Python", "MATLAB", "Arduino IDE"],
+    hardware: ["DW3000 UWB", "BNO085 IMU", "VL53L0X", "HC-SR04", "IR Sensors"],
     link: "",
     image: "",
     details: [
@@ -394,7 +445,8 @@ const projects = [
     title: "Contact list cleanup pipeline",
     date: "2026 Sept",
     description: "Built a repeatable process for turning messy multi-location contact exports into clean, Excel-ready files — standardising phone formats and flagging missing data across dozens of company records.",
-    tags: ["Excel", "Data cleanup", "SQL Server"],
+    software: ["Excel", "SQL Server"],
+    hardware: [],
     link: "",
     image: "",
     details: []
@@ -403,7 +455,8 @@ const projects = [
     title: "SQL Server reporting query",
     date: "2026 Mar",
     description: "Wrote a query against a companies/contacts table to pull structured location and contact data for reporting, replacing a manual export-and-edit workflow.",
-    tags: ["SQL Server", "Reporting"],
+    software: ["SQL Server", "SSRS"],
+    hardware: [],
     link: "",
     image: "",
     details: []
